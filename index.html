@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Special Journey ✨</title>
-
+    <link rel="icon" type="image/x-icon" href="img/Sparkle_Cinematic_Story_Logo (1).png">
     <!-- Theme Configuration & Tailwind Integration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -320,7 +320,6 @@
             touch-action: none;
         }
 
-        /* Custom Color Input styling */
         input[type="color"]::-webkit-color-swatch-wrapper {
             padding: 0;
         }
@@ -342,13 +341,18 @@
     <!-- PRELOADER -->
     <div id="loader"
         class="fixed inset-0 z-[80] flex flex-col items-center justify-center bg-bgmain transition-opacity duration-1000">
-        <div class="relative flex justify-center items-center">
+        <div class="relative flex flex-col justify-center items-center">
             <div
                 class="absolute inset-0 bg-secondary-200 blur-3xl rounded-full opacity-50 animate-pulse w-40 h-40 mx-auto">
             </div>
-            <div class="text-6xl animate-magic-pulse relative z-10 drop-shadow-lg" id="loader-emoji">✨</div>
+            <!-- Logo added to Loader -->
+            <img src="img/form logo.png" alt="Sparkle Cinematic Story Logo"
+                class="h-28 w-auto animate-magic-pulse relative z-10 drop-shadow-lg mb-2">
+            <div class="text-3xl md:text-5xl animate-magic-pulse relative z-10 drop-shadow-lg mt-4 hidden"
+                id="loader-emoji">✨</div>
         </div>
-        <p id="loader-text" class="mt-8 text-primary-500 font-cursive text-4xl tracking-widest animate-pulse">Gathering
+        <p id="loader-text"
+            class="mt-8 text-primary-500 font-cursive text-3xl md:text-4xl tracking-widest animate-pulse">Gathering
             memories...</p>
     </div>
 
@@ -357,6 +361,13 @@
     <!-- ============================================== -->
     <div id="setup-container" class="relative z-10 w-full max-w-5xl mx-auto p-4 md:p-8 my-10 hidden">
         <div class="glass-panel rounded-[2rem] p-6 md:p-12 shadow-2xl">
+
+            <!-- LOGO: Added to Setup Header -->
+            <div class="flex justify-center mb-6">
+                <img src="img/form logo.png" alt="Sparkle Story Logo"
+                    class="h-24 md:h-32 object-contain drop-shadow-md animate-magic-pulse">
+            </div>
+
             <h1
                 class="text-5xl md:text-6xl font-cursive text-center drop-shadow-sm mb-3 celebration-text-gradient py-2">
                 Cinematic Journey Builder ✨</h1>
@@ -569,6 +580,10 @@
             <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
                 style="animation-delay: 2s;"></div>
 
+            <!-- LOGO: Added to Viewer Hero Section -->
+            <img src="img/Sparkle_Cinematic_Story_Logo (1).png" alt="Sparkle Story Logo"
+                class="h-32 md:h-48 object-contain mb-8 z-10 reveal drop-shadow-xl" style="transition-delay: 0.1s;">
+
             <h1 id="viewer-title"
                 class="text-6xl md:text-8xl lg:text-9xl font-cursive text-main mb-6 drop-shadow-md reveal leading-tight celebration-text-gradient py-4">
                 Title</h1>
@@ -671,7 +686,6 @@
             rose: '4a3b42', ocean: '082f49', forest: '022c22', midnight: '3b0764', sunset: '451a03'
         };
 
-        // HEX to RGB Object
         function hexToRGB(hex) {
             if (hex.startsWith('#')) hex = hex.slice(1);
             return {
@@ -681,7 +695,6 @@
             };
         }
 
-        // Mix 2 RGB Colors (weight = 0 to 1, where 1 is 100% color1)
         function mixColors(color1, color2, weight) {
             return {
                 r: Math.round(color1.r * weight + color2.r * (1 - weight)),
@@ -697,7 +710,6 @@
             const white = { r: 255, g: 255, b: 255 };
             const black = { r: 0, g: 0, b: 0 };
 
-            // Generate full Tailwind-like palette from a single base color
             const root = document.documentElement;
             root.style.setProperty('--p-50', formatRGB(mixColors(base, white, 0.1)));
             root.style.setProperty('--p-100', formatRGB(mixColors(base, white, 0.2)));
@@ -706,7 +718,6 @@
             root.style.setProperty('--p-400', formatRGB(mixColors(base, white, 0.8)));
             root.style.setProperty('--p-500', formatRGB(base));
 
-            // Secondary (Slightly richer/different blend)
             root.style.setProperty('--s-100', formatRGB(mixColors(base, white, 0.15)));
             root.style.setProperty('--s-200', formatRGB(mixColors(base, white, 0.3)));
             root.style.setProperty('--s-300', formatRGB(mixColors(base, white, 0.5)));
@@ -714,13 +725,11 @@
             root.style.setProperty('--s-500', formatRGB(mixColors(base, black, 0.9)));
             root.style.setProperty('--s-600', formatRGB(mixColors(base, black, 0.75)));
 
-            // Texts and BG
-            const textMain = mixColors(base, black, 0.3); // Very dark tint of base
+            const textMain = mixColors(base, black, 0.3);
             root.style.setProperty('--text-main', formatRGB(textMain));
             root.style.setProperty('--text-muted', formatRGB(mixColors(base, black, 0.5)));
             root.style.setProperty('--bg-main', formatRGB(mixColors(base, white, 0.02)));
 
-            // Compute the dark HEX for the QR code dynamically
             const customQRHex = ((1 << 24) + (textMain.r << 16) + (textMain.g << 8) + textMain.b).toString(16).slice(1);
             themeQRColors['custom'] = customQRHex;
         }
@@ -729,7 +738,6 @@
             document.documentElement.removeAttribute('style');
         }
 
-        // Live preview of the theme in Setup Mode
         document.querySelectorAll('input[name="theme"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 if (e.target.value === 'custom') {
@@ -743,10 +751,8 @@
             });
         });
 
-        // Native Color Picker Listener
         document.getElementById('custom-color-picker').addEventListener('input', (e) => {
             document.getElementById('custom-color-display').style.backgroundColor = e.target.value;
-            // Force select the custom radio button
             document.querySelector('input[value="custom"]').checked = true;
             document.documentElement.setAttribute('data-theme', 'custom');
             generateCustomPalette(e.target.value);
@@ -757,10 +763,6 @@
             return themeParticles[theme] || themeParticles['rose'];
         }
 
-
-        // ==========================================
-        // TOAST NOTIFICATIONS
-        // ==========================================
         function showToast(message, type = 'success') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
@@ -777,11 +779,7 @@
             }, 3500);
         }
 
-        // ==========================================
-        // SETUP DATA & INITIALIZATION
-        // ==========================================
         let stepCounter = 0;
-
         const defaultSteps = [
             { date: "Where it all began", text: "I still remember the exact moment we met. Time just stopped.", img: "https://images.unsplash.com/photo-1518199266791-5375a83164ba?auto=format&fit=crop&w=800&q=80" },
             { date: "Our Beautiful Adventures", text: "Every day spent with you feels like magic. Here's to us!", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80" }
@@ -789,14 +787,8 @@
 
         window.addEventListener('load', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            const idParam = urlParams.get('id');
-            const dataParam = urlParams.get('data');
-
-            if (idParam || dataParam) {
-                initApp();
-            } else {
-                setTimeout(() => hideLoader(() => initApp()), 1000);
-            }
+            if (urlParams.get('id') || urlParams.get('data')) initApp();
+            else setTimeout(() => hideLoader(() => initApp()), 1000);
         });
 
         function hideLoader(callback) {
@@ -828,7 +820,6 @@
                     window.location.href = window.location.pathname;
                 }
             } else {
-                // Default Setup
                 const defaultTheme = document.querySelector('input[name="theme"]:checked').value;
                 document.documentElement.setAttribute('data-theme', defaultTheme);
                 document.getElementById('setup-container').classList.remove('hidden');
@@ -836,9 +827,6 @@
             }
         }
 
-        // ==========================================
-        // SETUP MODE: BUILDING THE TIMELINE
-        // ==========================================
         function addStep(defaultDate = "", defaultText = "", defaultImg = "") {
             stepCounter++;
             const id = stepCounter;
@@ -1012,11 +1000,7 @@
                 .catch(() => showToast("Failed to download QR", "error"));
         }
 
-        // ==========================================
-        // VIEWER MODE: CINEMATIC SCROLL EXPERIENCE
-        // ==========================================
         function startViewer(config) {
-            // Apply Theme state globally
             const activeTheme = config.theme || 'rose';
             document.documentElement.setAttribute('data-theme', activeTheme);
             if (activeTheme === 'custom' && config.customColor) {
@@ -1029,7 +1013,7 @@
             document.getElementById('viewer-container').classList.remove('hidden');
 
             const pArray = getParticles();
-            document.getElementById('loader-emoji').innerText = pArray[0] || '✨';
+            // document.getElementById('loader-emoji').innerText = pArray[0] || '✨'; // Removed since logo replaces it
             document.getElementById('viewer-proposal-emoji').innerText = pArray[0] || '✨';
             triggerAmbientMagic();
 
