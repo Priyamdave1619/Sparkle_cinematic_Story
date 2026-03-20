@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Journey ✨</title>
+
+    <!-- Theme Configuration & Tailwind Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: 'rgba(var(--p-50), <alpha-value>)',
+                            100: 'rgba(var(--p-100), <alpha-value>)',
+                            200: 'rgba(var(--p-200), <alpha-value>)',
+                            300: 'rgba(var(--p-300), <alpha-value>)',
+                            400: 'rgba(var(--p-400), <alpha-value>)',
+                            500: 'rgba(var(--p-500), <alpha-value>)',
+                        },
+                        secondary: {
+                            100: 'rgba(var(--s-100), <alpha-value>)',
+                            200: 'rgba(var(--s-200), <alpha-value>)',
+                            300: 'rgba(var(--s-300), <alpha-value>)',
+                            400: 'rgba(var(--s-400), <alpha-value>)',
+                            500: 'rgba(var(--s-500), <alpha-value>)',
+                            600: 'rgba(var(--s-600), <alpha-value>)',
+                        },
+                        main: 'rgba(var(--text-main), <alpha-value>)',
+                        muted: 'rgba(var(--text-muted), <alpha-value>)',
+                        bgmain: 'rgba(var(--bg-main), <alpha-value>)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Premium Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================
+           DYNAMIC THEME COLOR PALETTES 🎨
+           ========================================= */
+
+        /* 1. Romantic Rose (Default) */
+        :root,
+        :root[data-theme="rose"] {
+            --p-50: 255, 241, 242;
+            --p-100: 255, 228, 230;
+            --p-200: 254, 205, 211;
+            --p-300: 253, 164, 175;
+            --p-400: 251, 113, 133;
+            --p-500: 244, 63, 94;
+            --s-100: 252, 231, 243;
+            --s-200: 251, 207, 232;
+            --s-300: 249, 168, 212;
+            --s-400: 244, 114, 182;
+            --s-500: 236, 72, 153;
+            --s-600: 219, 39, 119;
+            --text-main: 74, 59, 66;
+            --text-muted: 122, 97, 109;
+            --bg-main: 255, 250, 252;
+        }
+
+        /* 2. Ocean Breeze */
+        :root[data-theme="ocean"] {
+            --p-50: 240, 249, 255;
+            --p-100: 224, 242, 254;
+            --p-200: 186, 230, 253;
+            --p-300: 125, 211, 252;
+            --p-400: 56, 189, 248;
+            --p-500: 14, 165, 233;
+            --s-100: 239, 246, 255;
+            --s-200: 219, 234, 254;
+            --s-300: 191, 219, 254;
+            --s-400: 147, 197, 253;
+            --s-500: 59, 130, 246;
+            --s-600: 37, 99, 235;
+            --text-main: 8, 47, 73;
+            --text-muted: 3, 105, 161;
+            --bg-main: 248, 252, 255;
+        }
+
+        /* 3. Enchanted Forest */
+        :root[data-theme="forest"] {
+            --p-50: 236, 253, 245;
+            --p-100: 209, 250, 229;
+            --p-200: 167, 243, 208;
+            --p-300: 110, 231, 183;
+            --p-400: 52, 211, 153;
+            --p-500: 16, 185, 129;
+            --s-100: 240, 253, 250;
+            --s-200: 204, 251, 241;
+            --s-300: 153, 246, 228;
+            --s-400: 94, 234, 212;
+            --s-500: 20, 184, 166;
+            --s-600: 13, 148, 136;
+            --text-main: 2, 44, 34;
+            --text-muted: 4, 120, 87;
+            --bg-main: 250, 253, 251;
+        }
+
+        /* 4. Midnight Magic */
+        :root[data-theme="midnight"] {
+            --p-50: 250, 245, 255;
+            --p-100: 243, 232, 255;
+            --p-200: 233, 213, 255;
+            --p-300: 216, 180, 254;
+            --p-400: 192, 132, 252;
+            --p-500: 168, 85, 247;
+            --s-100: 238, 242, 255;
+            --s-200: 224, 231, 255;
+            --s-300: 199, 210, 254;
+            --s-400: 165, 180, 252;
+            --s-500: 99, 102, 241;
+            --s-600: 79, 70, 229;
+            --text-main: 59, 7, 100;
+            --text-muted: 107, 33, 168;
+            --bg-main: 252, 250, 255;
+        }
+
+        /* 5. Golden Sunset */
+        :root[data-theme="sunset"] {
+            --p-50: 255, 251, 235;
+            --p-100: 254, 243, 199;
+            --p-200: 253, 230, 138;
+            --p-300: 252, 211, 77;
+            --p-400: 251, 191, 36;
+            --p-500: 245, 158, 11;
+            --s-100: 255, 247, 237;
+            --s-200: 255, 237, 213;
+            --s-300: 254, 215, 170;
+            --s-400: 253, 186, 116;
+            --s-500: 249, 115, 22;
+            --s-600: 234, 88, 12;
+            --text-main: 69, 26, 3;
+            --text-muted: 180, 83, 9;
+            --bg-main: 255, 253, 250;
+        }
+
+        /* 6. Custom Theme - Variables dynamically injected via JS */
+        :root[data-theme="custom"] {}
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: rgb(var(--bg-main));
+            color: rgb(var(--text-main));
+            min-height: 100vh;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .setup-mode {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, rgb(var(--bg-main)) 0%, rgb(var(--p-50)) 100%);
+        }
+
+        .viewer-mode {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-sans-elegant {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .font-cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .celebration-text-gradient {
+            background: linear-gradient(to right, rgb(var(--p-400)), rgb(var(--p-500)), rgb(var(--s-500)));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes dreamyBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .bg-celebration {
+            background: linear-gradient(-45deg, rgb(var(--p-50)), rgb(var(--bg-main)), rgb(var(--p-100)), rgb(var(--s-100)));
+            background-size: 400% 400%;
+            animation: dreamyBG 12s ease infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: translateY(-20vh) scale(1.2) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .magic-particle {
+            position: absolute;
+            color: white;
+            filter: drop-shadow(0 0 10px rgba(var(--p-500), 0.5));
+            animation: floatUp linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow: 0 30px 60px -15px rgba(var(--p-400), 0.15);
+        }
+
+        .cinematic-frame {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(var(--p-400), 0.15);
+            transition: transform 0.8s ease, box-shadow 0.8s ease;
+        }
+
+        .cinematic-frame img,
+        .cinematic-frame video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 3s ease;
+        }
+
+        .cinematic-frame:hover {
+            box-shadow: 0 30px 60px -15px rgba(var(--p-400), 0.25);
+        }
+
+        .cinematic-frame:hover img,
+        .cinematic-frame:hover video {
+            transform: scale(1.04);
+        }
+
+        @keyframes truePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-magic-pulse {
+            animation: truePulse 2s infinite ease-in-out;
+        }
+
+        .toast-enter {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-exit {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(var(--bg-main));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(var(--p-300));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(var(--p-400));
+        }
+
+        #btn-no {
+            touch-action: none;
+        }
+
+        /* Custom Color Input styling */
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body class="relative setup-mode" id="body-tag" data-theme="rose">
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div id="toast-container"
+        class="fixed top-5 left-1/2 transform -translate-x-1/2 z-[100] flex flex-col gap-3 pointer-events-none w-[90%] max-w-sm">
+    </div>
+
+    <!-- PRELOADER -->
+    <div id="loader"
+        class="fixed inset-0 z-[80] flex flex-col items-center justify-center bg-bgmain transition-opacity duration-1000">
+        <div class="relative flex justify-center items-center">
+            <div
+                class="absolute inset-0 bg-secondary-200 blur-3xl rounded-full opacity-50 animate-pulse w-40 h-40 mx-auto">
+            </div>
+            <div class="text-6xl animate-magic-pulse relative z-10 drop-shadow-lg" id="loader-emoji">✨</div>
+        </div>
+        <p id="loader-text" class="mt-8 text-primary-500 font-cursive text-4xl tracking-widest animate-pulse">Gathering
+            memories...</p>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- SETUP MODE: CREATOR DASHBOARD                  -->
+    <!-- ============================================== -->
+    <div id="setup-container" class="relative z-10 w-full max-w-5xl mx-auto p-4 md:p-8 my-10 hidden">
+        <div class="glass-panel rounded-[2rem] p-6 md:p-12 shadow-2xl">
+            <h1
+                class="text-5xl md:text-6xl font-cursive text-center drop-shadow-sm mb-3 celebration-text-gradient py-2">
+                Cinematic Journey Builder ✨</h1>
+            <p class="text-muted text-center mb-10 font-medium text-lg">Create a beautiful, scrolling timeline for
+                birthdays, best friends, or proposals.</p>
+
+            <div class="space-y-8">
+
+                <!-- Theme Selector -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary-100 space-y-4">
+                    <h3 class="text-xl font-bold text-main">Choose a Theme Color 🎨</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <label class="cursor-pointer relative group">
+                            <input type="radio" name="theme" value="rose" class="peer hidden" checked>
+                            <div
+                                class="p-3 rounded-xl border-2 border-transparent peer-checked:border-primary-400 peer-checked:bg-primary-50 transition text-center hover:bg-gray-50 peer-checked:hover:bg-primary-50">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gradient-to-r from-[#fb7185] to-[#f472b6] mx-auto mb-2 shadow-sm">
+                                </div>
+                                <span class="text-xs font-bold text-main">Romantic Rose</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative group">
+                            <input type="radio" name="theme" value="ocean" class="peer hidden">
+                            <div
+                                class="p-3 rounded-xl border-2 border-transparent peer-checked:border-primary-400 peer-checked:bg-primary-50 transition text-center hover:bg-gray-50 peer-checked:hover:bg-primary-50">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gradient-to-r from-[#38bdf8] to-[#3b82f6] mx-auto mb-2 shadow-sm">
+                                </div>
+                                <span class="text-xs font-bold text-main">Ocean Breeze</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative group">
+                            <input type="radio" name="theme" value="forest" class="peer hidden">
+                            <div
+                                class="p-3 rounded-xl border-2 border-transparent peer-checked:border-primary-400 peer-checked:bg-primary-50 transition text-center hover:bg-gray-50 peer-checked:hover:bg-primary-50">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gradient-to-r from-[#34d399] to-[#14b8a6] mx-auto mb-2 shadow-sm">
+                                </div>
+                                <span class="text-xs font-bold text-main">Enchanted Forest</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative group">
+                            <input type="radio" name="theme" value="midnight" class="peer hidden">
+                            <div
+                                class="p-3 rounded-xl border-2 border-transparent peer-checked:border-primary-400 peer-checked:bg-primary-50 transition text-center hover:bg-gray-50 peer-checked:hover:bg-primary-50">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gradient-to-r from-[#c084fc] to-[#818cf8] mx-auto mb-2 shadow-sm">
+                                </div>
+                                <span class="text-xs font-bold text-main">Midnight Magic</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative group">
+                            <input type="radio" name="theme" value="sunset" class="peer hidden">
+                            <div
+                                class="p-3 rounded-xl border-2 border-transparent peer-checked:border-primary-400 peer-checked:bg-primary-50 transition text-center hover:bg-gray-50 peer-checked:hover:bg-primary-50">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gradient-to-r from-[#fbbf24] to-[#f97316] mx-auto mb-2 shadow-sm">
+                                </div>
+                                <span class="text-xs font-bold text-main">Golden Sunset</span>
+                            </div>
+                        </label>
+                        <!-- CUSTOM COLOR PICKER -->
+                        <label class="cursor-pointer relative group">
+                            <input type="radio" name="theme" value="custom" class="peer hidden">
+                            <div
+                                class="p-3 rounded-xl border-2 border-transparent peer-checked:border-primary-400 peer-checked:bg-primary-50 transition text-center hover:bg-gray-50 peer-checked:hover:bg-primary-50 h-full">
+                                <div class="w-8 h-8 rounded-full mx-auto mb-2 shadow-sm relative overflow-hidden flex items-center justify-center border-2 border-white ring-2 ring-gray-200 bg-gray-100"
+                                    id="custom-color-ring">
+                                    <input type="color" id="custom-color-picker" value="#9333ea"
+                                        class="absolute w-12 h-12 cursor-pointer z-10 opacity-0">
+                                    <div id="custom-color-display" class="w-full h-full bg-[#9333ea]"></div>
+                                </div>
+                                <span class="text-xs font-bold text-main">Custom 🎨</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Intro -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary-100">
+                    <label class="block text-sm font-bold text-primary-400 mb-2 uppercase tracking-wide">Main
+                        Title</label>
+                    <input type="text" id="input-title" value="A Special Journey With You ✨"
+                        class="w-full px-4 py-3 border border-primary-200 rounded-xl focus:ring-2 focus:ring-primary-300 transition text-lg font-medium text-main bg-primary-50/30">
+                </div>
+
+                <!-- Journey Timeline -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-primary-100">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-main tracking-tight">Timeline Memories</h3>
+                            <p class="text-xs text-muted mt-1">Upload images OR paste video links (MP4, WebM).</p>
+                        </div>
+                        <button onclick="addStep('', '', '')"
+                            class="text-sm bg-gradient-to-r from-primary-400 to-secondary-500 text-white px-6 py-3 rounded-full hover:shadow-lg font-bold transition transform hover:scale-105 shadow-secondary-200">+
+                            Add Memory</button>
+                    </div>
+
+                    <div id="steps-list" class="space-y-8 border-l-2 border-primary-100 pl-4 md:pl-8 ml-2">
+                        <!-- Steps injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Question/Celebration Settings -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary-100 space-y-4">
+                    <h3 class="text-xl font-bold text-main">The Final Message / Question 🎁</h3>
+                    <input type="text" id="input-question" value="Happy Birthday to my favorite person! 🎉"
+                        class="w-full px-4 py-3 border border-primary-200 rounded-xl text-xl font-medium text-main focus:ring-2 focus:ring-primary-300 outline-none bg-primary-50/30">
+                    <input type="text" id="input-subtext"
+                        value="Wishing you all the joy and happiness in the universe. Let's celebrate!"
+                        class="w-full px-4 py-3 border border-primary-200 rounded-xl text-muted focus:ring-2 focus:ring-primary-300 outline-none bg-primary-50/30">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <label class="block text-xs font-bold text-primary-400 uppercase mb-2">Primary Button (Yes /
+                                Accept)</label>
+                            <input type="text" id="input-btn-yes" value="Let's Celebrate! 🥂"
+                                class="w-full px-4 py-3 border border-primary-200 rounded-xl text-main focus:ring-2 focus:ring-primary-300 outline-none bg-primary-50/30">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-primary-400 uppercase mb-2">Trick Button (They
+                                can't click this)</label>
+                            <input type="text" id="input-btn-no" value="No thanks 🙈"
+                                class="w-full px-4 py-3 border border-primary-200 rounded-xl text-main focus:ring-2 focus:ring-primary-300 outline-none bg-primary-50/30">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Settings -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-primary-100 space-y-4">
+                    <h3 class="text-xl font-bold text-main">When They Click Accept! 🎉</h3>
+                    <input type="text" id="input-success-title" value="Yay! You're the best! 💖"
+                        class="w-full px-4 py-3 border border-primary-200 rounded-xl font-medium text-main bg-primary-50/30">
+                    <input type="text" id="input-success-msg" value="I can't wait to make more memories with you!"
+                        class="w-full px-4 py-3 border border-primary-200 rounded-xl text-muted bg-primary-50/30">
+
+                    <div
+                        class="mt-4 p-4 bg-primary-50/50 rounded-xl border border-primary-100 flex flex-col md:flex-row gap-4 items-center">
+                        <img id="preview-success"
+                            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80"
+                            class="w-20 h-20 object-cover rounded-lg shadow-md border-2 border-white">
+                        <div class="flex-1 w-full space-y-2">
+                            <p class="text-xs font-bold text-primary-400 uppercase">Final Happy Image / Video</p>
+                            <input type="file" accept="image/*"
+                                onchange="compressImage(this, 'input-success-img', 'preview-success')"
+                                class="text-xs w-full file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:font-semibold file:bg-primary-100 file:text-primary-600 hover:file:bg-primary-200 cursor-pointer transition border border-primary-100">
+                            <input type="text" id="input-success-img"
+                                value="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
+                                class="w-full px-3 py-2 border border-primary-200 rounded-lg text-xs text-primary-500 outline-none bg-white"
+                                oninput="document.getElementById('preview-success').src=this.value">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="generate-btn" onclick="generateLink()"
+                    class="w-full bg-gradient-to-r from-secondary-500 to-primary-400 hover:from-secondary-600 hover:to-primary-500 text-white font-bold py-5 rounded-xl shadow-xl shadow-secondary-200 transition-all transform hover:-translate-y-1 text-lg flex justify-center items-center gap-2">
+                    <span>✨ Generate Magic Link & QR Code ✨</span>
+                </button>
+
+                <!-- Link & QR Output -->
+                <div id="link-output-container"
+                    class="hidden mt-6 p-8 bg-white rounded-2xl border border-primary-100 text-center shadow-xl">
+                    <p class="celebration-text-gradient font-bold mb-2 text-4xl font-cursive">Your Magic is Ready! 💌
+                    </p>
+                    <p class="text-sm text-muted mb-6 font-medium">Send the link to your special someone, or let them
+                        scan the QR code.</p>
+
+                    <input type="text" id="generated-link" readonly
+                        class="w-full px-4 py-3 border border-primary-200 rounded-xl bg-primary-50/50 text-main font-semibold text-center text-sm mb-6 shadow-inner focus:outline-none">
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                        <button id="copy-btn" onclick="copyLink(this)"
+                            class="w-full sm:w-auto bg-gradient-to-r from-primary-400 to-secondary-500 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-secondary-200 transition-all duration-300 transform hover:scale-105">
+                            <span id="copy-text">📋 Copy Link</span>
+                        </button>
+                        <button onclick="downloadQR()"
+                            class="w-full sm:w-auto bg-white border-2 border-primary-100 text-primary-500 px-8 py-4 rounded-full font-bold shadow-sm transition-all duration-300 transform hover:scale-105 hover:bg-primary-50">
+                            ⬇️ Download QR
+                        </button>
+                    </div>
+
+                    <!-- QR Code Frame -->
+                    <div class="flex justify-center">
+                        <div
+                            class="p-4 bg-white rounded-3xl shadow-[0_10px_40px_-15px_rgba(var(--p-500),0.2)] border border-primary-100 inline-block">
+                            <img id="qr-code" src="" alt="QR Code" class="w-48 h-48 mx-auto rounded-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- VIEWER MODE: THE CINEMATIC SCROLL JOURNEY      -->
+    <!-- ============================================== -->
+    <div id="viewer-container" class="relative z-10 w-full hidden viewer-mode">
+
+        <!-- Ambient Magic Particles Container -->
+        <div id="particles" class="fixed inset-0 pointer-events-none z-50 overflow-hidden"></div>
+
+        <!-- 1. HERO SECTION -->
+        <section
+            class="min-h-screen flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+            <!-- Decorative Soft Glow Backgrounds -->
+            <div
+                class="absolute top-0 left-0 w-96 h-96 bg-secondary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse">
+            </div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse"
+                style="animation-delay: 2s;"></div>
+
+            <h1 id="viewer-title"
+                class="text-6xl md:text-8xl lg:text-9xl font-cursive text-main mb-6 drop-shadow-md reveal leading-tight celebration-text-gradient py-4">
+                Title</h1>
+            <p class="text-muted text-sm md:text-lg font-sans-elegant tracking-[0.3em] uppercase reveal font-medium"
+                style="transition-delay: 0.3s;">Scroll to view our story</p>
+
+            <!-- Bouncing Scroll Indicator -->
+            <div class="absolute bottom-12 animate-bounce reveal" style="transition-delay: 0.6s;">
+                <svg class="w-8 h-8 text-primary-300 drop-shadow-sm" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 2. THE TIMELINE JOURNEY -->
+        <section id="viewer-timeline" class="max-w-6xl mx-auto px-6 py-20 flex flex-col gap-32 md:gap-48 relative">
+            <div
+                class="hidden md:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary-200 to-transparent transform -translate-x-1/2 z-0">
+            </div>
+            <!-- Journey Items injected here -->
+        </section>
+
+        <!-- 3. THE FINAL MESSAGE / QUESTION -->
+        <section id="proposal-section"
+            class="min-h-screen flex items-center justify-center p-4 md:p-6 bg-celebration relative z-20 overflow-hidden">
+            <div
+                class="glass-panel p-8 md:p-16 rounded-[2.5rem] text-center max-w-4xl w-full reveal shadow-[0_20px_60px_-15px_rgba(var(--p-400),0.2)] border-4 border-white">
+
+                <div class="flex justify-center mb-8 relative">
+                    <div
+                        class="absolute inset-0 bg-secondary-300 blur-[40px] rounded-full opacity-50 animate-pulse w-32 h-32 mx-auto mt-2">
+                    </div>
+                    <div class="text-6xl md:text-7xl animate-magic-pulse relative z-10 drop-shadow-lg"
+                        id="viewer-proposal-emoji">✨</div>
+                </div>
+
+                <h1 id="proposal-question"
+                    class="text-4xl md:text-6xl lg:text-7xl font-cursive text-main mb-6 leading-tight drop-shadow-sm px-2">
+                    Question</h1>
+                <p id="proposal-subtext"
+                    class="text-lg md:text-2xl text-muted mb-12 font-sans-elegant font-light tracking-wide px-4">Subtext
+                </p>
+
+                <!-- Responsive & Safe Button Container -->
+                <div
+                    class="flex flex-col sm:flex-row justify-center items-center gap-6 w-full max-w-lg mx-auto relative min-h-[80px]">
+                    <button id="btn-yes"
+                        class="w-full sm:w-auto bg-gradient-to-r from-primary-400 to-secondary-500 text-white font-sans-elegant font-bold uppercase tracking-[0.1em] py-5 px-10 rounded-full shadow-xl shadow-secondary-300/50 hover:-translate-y-1 hover:shadow-secondary-400/60 transition-all duration-300 text-sm md:text-base z-30 animate-pulse border border-secondary-300">
+                        Yes!
+                    </button>
+                    <!-- Trick Button -->
+                    <button id="btn-no"
+                        class="w-full sm:w-auto bg-white/90 backdrop-blur-md text-primary-400 font-sans-elegant font-semibold uppercase tracking-[0.1em] py-5 px-10 rounded-full shadow-lg border border-primary-100 hover:bg-primary-50 hover:text-primary-500 text-sm md:text-base z-40 transition-shadow">
+                        No Way
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SUCCESS CELEBRATION (Fully Responsive) -->
+        <section id="success-section"
+            class="fixed inset-0 bg-bgmain z-[60] hidden opacity-0 transition-opacity duration-1000 overflow-y-auto">
+            <div class="flex flex-col items-center justify-center min-h-screen py-12 px-4 md:px-8">
+                <div class="text-center w-full max-w-5xl">
+                    <h1 id="success-title"
+                        class="text-5xl md:text-7xl lg:text-8xl font-cursive text-transparent bg-clip-text bg-gradient-to-r from-secondary-500 to-primary-400 mb-8 drop-shadow-sm leading-tight py-2">
+                        Title</h1>
+
+                    <div
+                        class="cinematic-frame h-[40vh] md:h-[55vh] w-full max-w-3xl mx-auto rounded-[2rem] shadow-[0_20px_50px_-10px_rgba(var(--p-400),0.3)] mb-10 border-4 md:border-8 border-white bg-primary-50/50">
+                        <div id="success-media-container" class="w-full h-full p-1 bg-white"></div>
+                    </div>
+
+                    <p id="success-message"
+                        class="text-main font-sans-elegant text-xl md:text-3xl tracking-wide font-light px-4 leading-relaxed">
+                        Message</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // ==========================================
+        // DYNAMIC THEMES & CUSTOM RGB MATH 🎨
+        // ==========================================
+        const themeParticles = {
+            rose: ['✨', '🌸', '💖', '🤍', '🦋'],
+            ocean: ['✨', '🌊', '💙', '🐚', '🫧'],
+            forest: ['✨', '🌿', '💚', '🍃', '🦋'],
+            midnight: ['✨', '🌙', '💜', '🌌', '🔮'],
+            sunset: ['✨', '🌅', '🧡', '🌻', '🕊️'],
+            custom: ['✨', '💫', '🌟', '🤍', '🎉']
+        };
+
+        const themeQRColors = {
+            rose: '4a3b42', ocean: '082f49', forest: '022c22', midnight: '3b0764', sunset: '451a03'
+        };
+
+        // HEX to RGB Object
+        function hexToRGB(hex) {
+            if (hex.startsWith('#')) hex = hex.slice(1);
+            return {
+                r: parseInt(hex.slice(0, 2), 16),
+                g: parseInt(hex.slice(2, 4), 16),
+                b: parseInt(hex.slice(4, 6), 16)
+            };
+        }
+
+        // Mix 2 RGB Colors (weight = 0 to 1, where 1 is 100% color1)
+        function mixColors(color1, color2, weight) {
+            return {
+                r: Math.round(color1.r * weight + color2.r * (1 - weight)),
+                g: Math.round(color1.g * weight + color2.g * (1 - weight)),
+                b: Math.round(color1.b * weight + color2.b * (1 - weight))
+            };
+        }
+
+        function formatRGB(c) { return `${c.r}, ${c.g}, ${c.b}`; }
+
+        function generateCustomPalette(hexColor) {
+            const base = hexToRGB(hexColor);
+            const white = { r: 255, g: 255, b: 255 };
+            const black = { r: 0, g: 0, b: 0 };
+
+            // Generate full Tailwind-like palette from a single base color
+            const root = document.documentElement;
+            root.style.setProperty('--p-50', formatRGB(mixColors(base, white, 0.1)));
+            root.style.setProperty('--p-100', formatRGB(mixColors(base, white, 0.2)));
+            root.style.setProperty('--p-200', formatRGB(mixColors(base, white, 0.4)));
+            root.style.setProperty('--p-300', formatRGB(mixColors(base, white, 0.6)));
+            root.style.setProperty('--p-400', formatRGB(mixColors(base, white, 0.8)));
+            root.style.setProperty('--p-500', formatRGB(base));
+
+            // Secondary (Slightly richer/different blend)
+            root.style.setProperty('--s-100', formatRGB(mixColors(base, white, 0.15)));
+            root.style.setProperty('--s-200', formatRGB(mixColors(base, white, 0.3)));
+            root.style.setProperty('--s-300', formatRGB(mixColors(base, white, 0.5)));
+            root.style.setProperty('--s-400', formatRGB(mixColors(base, white, 0.7)));
+            root.style.setProperty('--s-500', formatRGB(mixColors(base, black, 0.9)));
+            root.style.setProperty('--s-600', formatRGB(mixColors(base, black, 0.75)));
+
+            // Texts and BG
+            const textMain = mixColors(base, black, 0.3); // Very dark tint of base
+            root.style.setProperty('--text-main', formatRGB(textMain));
+            root.style.setProperty('--text-muted', formatRGB(mixColors(base, black, 0.5)));
+            root.style.setProperty('--bg-main', formatRGB(mixColors(base, white, 0.02)));
+
+            // Compute the dark HEX for the QR code dynamically
+            const customQRHex = ((1 << 24) + (textMain.r << 16) + (textMain.g << 8) + textMain.b).toString(16).slice(1);
+            themeQRColors['custom'] = customQRHex;
+        }
+
+        function clearCustomTheme() {
+            document.documentElement.removeAttribute('style');
+        }
+
+        // Live preview of the theme in Setup Mode
+        document.querySelectorAll('input[name="theme"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'custom') {
+                    const color = document.getElementById('custom-color-picker').value;
+                    document.documentElement.setAttribute('data-theme', 'custom');
+                    generateCustomPalette(color);
+                } else {
+                    clearCustomTheme();
+                    document.documentElement.setAttribute('data-theme', e.target.value);
+                }
+            });
+        });
+
+        // Native Color Picker Listener
+        document.getElementById('custom-color-picker').addEventListener('input', (e) => {
+            document.getElementById('custom-color-display').style.backgroundColor = e.target.value;
+            // Force select the custom radio button
+            document.querySelector('input[value="custom"]').checked = true;
+            document.documentElement.setAttribute('data-theme', 'custom');
+            generateCustomPalette(e.target.value);
+        });
+
+        function getParticles() {
+            const theme = document.documentElement.getAttribute('data-theme') || 'rose';
+            return themeParticles[theme] || themeParticles['rose'];
+        }
+
+
+        // ==========================================
+        // TOAST NOTIFICATIONS
+        // ==========================================
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+
+            let bgClass = type === 'success' ? 'bg-gradient-to-r from-primary-400 to-secondary-500' : (type === 'error' ? 'bg-gradient-to-r from-primary-500 to-red-400' : 'bg-primary-400');
+            toast.className = `${bgClass} text-white px-8 py-4 rounded-2xl shadow-xl shadow-secondary-200/50 font-sans-elegant text-sm font-bold tracking-wide flex items-center justify-center transform transition-all duration-300 toast-exit border border-white/20`;
+            toast.innerHTML = message;
+
+            container.appendChild(toast);
+            setTimeout(() => { toast.classList.remove('toast-exit'); toast.classList.add('toast-enter'); }, 10);
+            setTimeout(() => {
+                toast.classList.remove('toast-enter'); toast.classList.add('toast-exit');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        // ==========================================
+        // SETUP DATA & INITIALIZATION
+        // ==========================================
+        let stepCounter = 0;
+
+        const defaultSteps = [
+            { date: "Where it all began", text: "I still remember the exact moment we met. Time just stopped.", img: "https://images.unsplash.com/photo-1518199266791-5375a83164ba?auto=format&fit=crop&w=800&q=80" },
+            { date: "Our Beautiful Adventures", text: "Every day spent with you feels like magic. Here's to us!", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80" }
+        ];
+
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const idParam = urlParams.get('id');
+            const dataParam = urlParams.get('data');
+
+            if (idParam || dataParam) {
+                initApp();
+            } else {
+                setTimeout(() => hideLoader(() => initApp()), 1000);
+            }
+        });
+
+        function hideLoader(callback) {
+            const loader = document.getElementById('loader');
+            loader.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => { loader.style.display = 'none'; if (callback) callback(); }, 1000);
+        }
+
+        async function initApp() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const idParam = urlParams.get('id');
+            const dataParam = urlParams.get('data');
+
+            if (idParam) {
+                try {
+                    const response = await fetch('https://bytebin.lucko.me/' + idParam);
+                    if (!response.ok) throw new Error("Link expired");
+                    const config = await response.json();
+                    hideLoader(() => startViewer(config));
+                } catch (e) {
+                    showToast("Magic link expired. Returning to creator mode.", "error");
+                    setTimeout(() => { window.location.href = window.location.pathname; }, 2000);
+                }
+            } else if (dataParam) {
+                try {
+                    const config = JSON.parse(decodeURIComponent(atob(dataParam)));
+                    hideLoader(() => startViewer(config));
+                } catch (e) {
+                    window.location.href = window.location.pathname;
+                }
+            } else {
+                // Default Setup
+                const defaultTheme = document.querySelector('input[name="theme"]:checked').value;
+                document.documentElement.setAttribute('data-theme', defaultTheme);
+                document.getElementById('setup-container').classList.remove('hidden');
+                defaultSteps.forEach(step => addStep(step.date, step.text, step.img));
+            }
+        }
+
+        // ==========================================
+        // SETUP MODE: BUILDING THE TIMELINE
+        // ==========================================
+        function addStep(defaultDate = "", defaultText = "", defaultImg = "") {
+            stepCounter++;
+            const id = stepCounter;
+            const container = document.getElementById('steps-list');
+
+            const stepHTML = `
+                <div class="memory-card relative bg-white p-6 rounded-3xl border border-primary-100 shadow-[0_10px_30px_-15px_rgba(var(--p-500),0.1)] transition hover:shadow-[0_10px_30px_-15px_rgba(var(--p-500),0.2)] mt-4">
+                    <div class="absolute -left-6 md:-left-10 top-8 w-5 h-5 bg-gradient-to-br from-secondary-300 to-primary-400 rounded-full border-4 border-white shadow-md"></div>
+                    <button onclick="this.closest('.memory-card').remove(); showToast('Memory gently removed ✨');" class="absolute -top-3 right-4 bg-white hover:bg-primary-50 text-primary-300 hover:text-primary-500 px-4 py-1.5 rounded-full text-xs font-semibold transition-all shadow-sm border border-primary-100 flex items-center gap-1.5 z-10">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        Remove
+                    </button>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-2">
+                        <div class="md:col-span-2 space-y-5">
+                            <div>
+                                <label class="block text-xs font-bold text-primary-400 uppercase mb-1 tracking-wider">Date / Sweet Label</label>
+                                <input type="text" class="step-date w-full px-3 py-2 border-b-2 border-primary-100 font-sans-elegant text-main focus:border-primary-300 outline-none transition bg-transparent" placeholder="e.g. Summer of 2022" value="${defaultDate}">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-primary-400 uppercase mb-1 tracking-wider">Your Memory</label>
+                                <textarea class="step-text w-full px-4 py-3 border border-primary-100 rounded-xl font-sans-elegant text-sm focus:ring-2 focus:ring-primary-200 outline-none bg-primary-50/30 text-main" rows="3" placeholder="Describe this beautiful moment...">${defaultText}</textarea>
+                            </div>
+                            <div class="bg-primary-50/50 p-4 rounded-xl border border-primary-100">
+                                <label class="block text-xs font-bold text-primary-400 uppercase mb-3">Upload Image OR Paste Link</label>
+                                <input type="file" accept="image/*" onchange="compressImage(this, 'url-${id}', 'preview-${id}')" class="mb-3 text-xs w-full file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-white file:text-primary-500 file:font-semibold hover:file:bg-primary-50 cursor-pointer transition border border-primary-100 shadow-sm">
+                                <input type="text" id="url-${id}" class="step-img w-full px-3 py-2 border border-white rounded-lg text-xs text-primary-400 outline-none shadow-sm" placeholder="Paste link (Image, MP4)" value="${defaultImg}" oninput="updatePreview('preview-${id}', this.value)">
+                            </div>
+                        </div>
+                        <div class="h-48 md:h-full w-full bg-primary-50/30 rounded-2xl overflow-hidden border border-primary-100 flex items-center justify-center shadow-inner" id="preview-container-${id}">
+                            ${generatePreviewHTML(`preview-${id}`, defaultImg)}
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', stepHTML);
+        }
+
+        function isVideo(url) { return url.match(/\.(mp4|webm|ogg)$/i) != null; }
+
+        function generatePreviewHTML(id, url) {
+            if (!url) return `<span class="text-xs text-primary-300 font-sans-elegant font-medium tracking-wide">No Media Added</span>`;
+            if (isVideo(url)) return `<video id="${id}" src="${url}" class="w-full h-full object-cover" autoplay loop muted playsinline></video>`;
+            return `<img id="${id}" src="${url}" class="w-full h-full object-cover">`;
+        }
+
+        function updatePreview(id, url) {
+            const container = document.getElementById(id)?.parentElement || document.getElementById('preview-container-' + id.split('-')[1]);
+            if (container) container.innerHTML = generatePreviewHTML(id, url);
+        }
+
+        function compressImage(fileInput, urlInputId, previewId) {
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            showToast("Enhancing image... ✨", "success");
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const img = new Image();
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    const MAX_WIDTH = 800;
+                    let width = img.width, height = img.height;
+                    if (width > MAX_WIDTH) { height *= MAX_WIDTH / width; width = MAX_WIDTH; }
+
+                    canvas.width = width; canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.fillStyle = "#ffffff";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.6);
+                    document.getElementById(urlInputId).value = compressedDataUrl;
+                    updatePreview(previewId, compressedDataUrl);
+                }
+                img.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+
+        async function generateLink() {
+            const btn = document.getElementById('generate-btn');
+            const steps = [];
+            document.querySelectorAll('#steps-list > .memory-card').forEach(el => {
+                const date = el.querySelector('.step-date').value;
+                const text = el.querySelector('.step-text').value;
+                const img = el.querySelector('.step-img').value;
+                if (text || img) steps.push({ date, text, image: img });
+            });
+
+            if (steps.length === 0) { showToast("Please add at least one beautiful memory! ✨", "error"); return; }
+
+            const selectedTheme = document.querySelector('input[name="theme"]:checked').value;
+            const config = {
+                theme: selectedTheme,
+                title: document.getElementById('input-title').value,
+                story: steps,
+                proposalQuestion: document.getElementById('input-question').value,
+                proposalSubtext: document.getElementById('input-subtext').value,
+                btnYesText: document.getElementById('input-btn-yes').value || 'Yes! ✨',
+                btnNoText: document.getElementById('input-btn-no').value || 'No 🙈',
+                successTitle: document.getElementById('input-success-title').value,
+                successMessage: document.getElementById('input-success-msg').value,
+                successImage: document.getElementById('input-success-img').value
+            };
+
+            if (selectedTheme === 'custom') {
+                config.customColor = document.getElementById('custom-color-picker').value;
+            }
+
+            btn.innerHTML = `<span>⏳ Weaving Magic...</span>`;
+            btn.classList.add('opacity-80', 'cursor-not-allowed'); btn.disabled = true;
+
+            try {
+                const response = await fetch('https://bytebin.lucko.me/post', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(config)
+                });
+
+                if (!response.ok) throw new Error("Upload Failed");
+                const data = await response.json();
+
+                const shortUrl = window.location.origin + window.location.pathname + "?id=" + data.key;
+                showLinkSuccess(shortUrl, config.theme);
+                showToast("Magic Link Created! ✨", "success");
+            } catch (error) {
+                const encodedData = btoa(encodeURIComponent(JSON.stringify(config)));
+                const longUrl = window.location.origin + window.location.pathname + "?data=" + encodedData;
+                showToast("Offline link created perfectly. ✨", "success");
+                showLinkSuccess(longUrl, config.theme);
+            } finally {
+                btn.innerHTML = `<span>✨ Generate Magic Link & QR Code ✨</span>`;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed'); btn.disabled = false;
+            }
+        }
+
+        function showLinkSuccess(url, theme) {
+            const linkOutputContainer = document.getElementById('link-output-container');
+            document.getElementById('generated-link').value = url;
+
+            const qrColor = themeQRColors[theme] || themeQRColors['rose'];
+            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(url)}&color=${qrColor}&bgcolor=ffffff`;
+            document.getElementById('qr-code').src = qrCodeUrl;
+
+            linkOutputContainer.classList.remove('hidden');
+            linkOutputContainer.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            triggerAmbientMagic();
+        }
+
+        function copyLink(btn) {
+            const linkInput = document.getElementById('generated-link');
+            linkInput.select(); document.execCommand("copy");
+            showToast("Link copied to clipboard! 💌 Go send it!");
+            const textSpan = btn.querySelector('#copy-text');
+            textSpan.innerText = "✅ Magic Copied!";
+            setTimeout(() => { textSpan.innerText = "📋 Copy Link"; }, 3000);
+        }
+
+        function downloadQR() {
+            const qrImgSrc = document.getElementById('qr-code').src;
+            if (!qrImgSrc) return;
+            showToast("Downloading QR Code... ✨");
+            fetch(qrImgSrc)
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a'); a.style.display = 'none';
+                    a.href = url; a.download = 'Magic_Journey_QR.png';
+                    document.body.appendChild(a); a.click();
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(() => showToast("Failed to download QR", "error"));
+        }
+
+        // ==========================================
+        // VIEWER MODE: CINEMATIC SCROLL EXPERIENCE
+        // ==========================================
+        function startViewer(config) {
+            // Apply Theme state globally
+            const activeTheme = config.theme || 'rose';
+            document.documentElement.setAttribute('data-theme', activeTheme);
+            if (activeTheme === 'custom' && config.customColor) {
+                generateCustomPalette(config.customColor);
+            } else {
+                clearCustomTheme();
+            }
+
+            document.getElementById('body-tag').classList.replace('setup-mode', 'viewer-mode');
+            document.getElementById('viewer-container').classList.remove('hidden');
+
+            const pArray = getParticles();
+            document.getElementById('loader-emoji').innerText = pArray[0] || '✨';
+            document.getElementById('viewer-proposal-emoji').innerText = pArray[0] || '✨';
+            triggerAmbientMagic();
+
+            document.getElementById('viewer-title').innerText = config.title;
+
+            const timelineContainer = document.getElementById('viewer-timeline');
+            config.story.forEach((step, index) => {
+                const isEven = index % 2 === 0;
+                const alignmentClass = isEven ? 'md:flex-row' : 'md:flex-row-reverse';
+                const textAlignment = isEven ? 'md:text-right md:pr-16' : 'md:text-left md:pl-16';
+
+                let mediaElement = isVideo(step.image)
+                    ? `<video src="${step.image}" class="w-full h-full object-cover border-[6px] border-white rounded-[16px] bg-white" autoplay loop muted playsinline></video>`
+                    : `<img src="${step.image}" class="w-full h-full object-cover border-[6px] border-white rounded-[16px] bg-white">`;
+
+                const itemHTML = `
+                    <div class="flex flex-col ${alignmentClass} items-center w-full relative z-10 reveal">
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-secondary-300 to-primary-400 rounded-full border-4 border-[rgb(var(--bg-main))] z-20 shadow-[0_0_15px_rgba(var(--p-500),0.4)]"></div>
+                        <div class="w-full md:w-1/2 ${textAlignment} mb-8 md:mb-0 px-4">
+                            <p class="text-sm md:text-base font-sans-elegant text-primary-400 tracking-[0.2em] uppercase mb-4 font-bold drop-shadow-sm">${step.date}</p>
+                            <p class="text-3xl md:text-5xl leading-tight text-main font-medium">${step.text}</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-4 relative">
+                            <div class="absolute inset-0 bg-secondary-200 blur-2xl rounded-full opacity-30 transform scale-90 -z-10"></div>
+                            <div class="cinematic-frame h-[350px] md:h-[500px] w-full max-w-xl mx-auto ${isEven ? 'md:ml-0' : 'md:mr-0'}">${mediaElement}</div>
+                        </div>
+                    </div>`;
+                timelineContainer.insertAdjacentHTML('beforeend', itemHTML);
+            });
+
+            document.getElementById('proposal-question').innerText = config.proposalQuestion;
+            document.getElementById('proposal-subtext').innerText = config.proposalSubtext;
+            document.getElementById('btn-yes').innerText = config.btnYesText || "Yes! ✨";
+            document.getElementById('btn-no').innerText = config.btnNoText || "No Way 🙈";
+            document.getElementById('success-title').innerText = config.successTitle;
+            document.getElementById('success-message').innerText = config.successMessage;
+
+            const successContainer = document.getElementById('success-media-container');
+            successContainer.innerHTML = isVideo(config.successImage)
+                ? `<video src="${config.successImage}" class="w-full h-full object-cover rounded-2xl" autoplay loop muted playsinline></video>`
+                : `<img src="${config.successImage}" class="w-full h-full object-cover rounded-2xl">`;
+
+            initScrollObserver(); initProposalLogic();
+        }
+
+        function initScrollObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.15 });
+            document.querySelectorAll('.reveal').forEach(reveal => observer.observe(reveal));
+        }
+
+        function initProposalLogic() {
+            const btnNo = document.getElementById('btn-no');
+            const btnYes = document.getElementById('btn-yes');
+            const successSection = document.getElementById('success-section');
+
+            function runAway(e) {
+                if (e) e.preventDefault();
+                btnNo.style.position = 'fixed';
+                const maxX = window.innerWidth - btnNo.offsetWidth - 20;
+                const maxY = window.innerHeight - btnNo.offsetHeight - 20;
+                btnNo.style.left = `${Math.max(10, Math.floor(Math.random() * maxX))}px`;
+                btnNo.style.top = `${Math.max(10, Math.floor(Math.random() * maxY))}px`;
+                btnNo.style.right = 'auto'; btnNo.style.bottom = 'auto'; btnNo.style.transform = 'none';
+            }
+
+            btnNo.addEventListener('mouseover', runAway);
+            btnNo.addEventListener('touchstart', runAway, { passive: false });
+
+            btnYes.addEventListener('click', () => {
+                successSection.classList.remove('hidden');
+                setTimeout(() => {
+                    successSection.classList.remove('opacity-0');
+                    successSection.classList.add('opacity-100');
+                    triggerCelebrationExplosion();
+                }, 50);
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        function triggerAmbientMagic() {
+            const container = document.getElementById('particles');
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.classList.add('magic-particle');
+                const pArray = getParticles();
+                particle.innerHTML = pArray[Math.floor(Math.random() * pArray.length)];
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.fontSize = (Math.random() * 15 + 12) + 'px';
+                particle.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.3;
+                container.appendChild(particle);
+                setTimeout(() => particle.remove(), 15000);
+            }, 600);
+        }
+
+        function triggerCelebrationExplosion() {
+            const container = document.getElementById('particles');
+            const pArray = [...getParticles(), '🥂', '🎉', '💕'];
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.classList.add('magic-particle');
+                    particle.innerHTML = pArray[Math.floor(Math.random() * pArray.length)];
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    particle.style.fontSize = (Math.random() * 35 + 15) + 'px';
+                    particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                    container.appendChild(particle);
+                }, i * 25);
+            }
+        }
+    </script>
+</body>
+
+</html>
