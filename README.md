@@ -29,6 +29,25 @@ Everything needed to render the story — text, theme, and even compressed image
 3. **Share** — Send the generated link (or its QR code) to the recipient. Opening the link loads the app directly in *viewer mode*, decodes the embedded data, and renders the cinematic story — no server lookup required.
 4. **Revisit** — Every story you generate is also saved to your local **Dashboard** (via `localStorage`) so you can find, re-copy, or delete it later from the same browser/device.
 
+# Screenshots
+
+## Terms and Conditions
+<img width="1467" height="757" alt="Screenshot 2026-06-30 at 9 40 07 PM" src="https://github.com/user-attachments/assets/14f08f3f-4915-4fe0-a19b-5e1830a8e393" />
+
+## Home Page
+<img width="1466" height="755" alt="Screenshot 2026-06-30 at 9 40 42 PM" src="https://github.com/user-attachments/assets/00a2dcb4-3b55-4967-be5a-0530d1b61b45" />
+
+## Result Page
+<img width="1466" height="759" alt="Screenshot 2026-06-30 at 9 41 20 PM" src="https://github.com/user-attachments/assets/c1184816-07e4-4eb3-b460-f0e990882899" />
+
+## URL: http://localhost:5500/?id=knxXVwloMY
+<img width="1468" height="760" alt="Screenshot 2026-06-30 at 9 42 28 PM" src="https://github.com/user-attachments/assets/cff5ae0d-681d-4fa5-98df-628479b71d29" />
+
+<img width="1465" height="758" alt="Screenshot 2026-06-30 at 9 43 19 PM" src="https://github.com/user-attachments/assets/71f57551-93d3-4507-99bd-255cef5b23df" />
+
+<img width="1468" height="755" alt="Screenshot 2026-06-30 at 9 43 44 PM" src="https://github.com/user-attachments/assets/08fb1706-b5d4-4f7f-b812-7b5ae6beeae2" />
+
+ 
 ## Tech Stack
 
 - **HTML5** — single self-contained file
